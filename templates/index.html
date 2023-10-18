@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>message board</title>
+</head>
+<body>
+  <h1>message board</h1>
+
+  <form action="/upload" method="post">
+    <input type="text" name="name" placeholder="name" required>
+    <textarea name="message" placeholder="message" required></textarea>
+    <button type="submit">提交</button>
+  </form>
+
+  <h2>message：</h2>
+  <ul>
+    {% for message in messages %}
+      <li><strong>{{ message.name }}:</strong> {{ message.message }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
